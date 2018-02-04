@@ -1,0 +1,8 @@
+<h1>新增用户</h1>
+
+<div class="franchiser new">
+  <h2>Create Franchiser</h2>
+  <%= form_for(:franchiser, :url => {:action => 'create'}) do |f| %>
+    <%= render(:partial => 'form', :locals => {:f => f})%>
+  <% end%>
+</div>

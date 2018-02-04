@@ -1,0 +1,58 @@
+
+<table width="100%" class="table">
+  <tbody>
+      <tr>
+        <td width="8%">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名:</td>
+        <td><%=  f.text_field :contact_name %></td>
+      </tr>
+      <td>邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱:</td>
+        <td><%=  f.text_field :email %></td>
+      </tr>
+      <tr>
+        <td>职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;务:</td>
+        <td><%=  f.text_field :headship %></td>
+      </tr>
+      <%# if @franchiser.new_record? %>
+      <tr>
+        <td>职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;能:</td>
+        <td>
+          <select>
+            <option>销售</option>
+            <option>技术支持</option>
+            <option>维修</option>
+          </select>
+        </td>
+      </tr>
+      <%# end %>
+      <tr>
+        <td>电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话:</td>
+        <td><%=  f.text_field :phone %></td>
+      </tr>
+      <%# if  @franchiser.new_record? || (current_franchiser.role != 2 && !@franchiser.new_record? ) %>
+      <tr>
+        <td>是否离职:</td>
+        <td>
+          <%=  f.check_box :is_leaved %>
+        </td>
+      </tr>
+      <%# end %>
+      <tr>
+        <td>邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;编:</td>
+        <td><%=  f.text_field :zip %></td>
+      </tr>
+      <tr>
+        <td>传&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;真:</td>
+        <td><%=  f.text_field :fax %></td>
+
+      </tr>
+      <tr>
+        <td>通讯地址:</td>
+        <td><%= f.text_field :address %></td>
+      </tr>
+     </tbody>
+</table>
+<div class="control-group">
+  <div class="controls">
+    <button type="submit" class="btn btn-primary">保存</button>
+  </div>
+</div>
