@@ -24,4 +24,8 @@ class FranchisersController < ApplicationController
 
   end
 
+  def show
+
+  end
+
 end

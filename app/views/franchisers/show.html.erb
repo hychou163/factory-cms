@@ -1,0 +1,73 @@
+<table width='100%' class="table">
+  <thead>
+  <tr><td colspan="2"><h4>用户详细</h4></td></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td width="8%">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名:</td>
+      <td>测试数据</td>
+    </tr>
+    <tr>
+      <td width="8%">登&nbsp;&nbsp;&nbsp;录名:</td>
+      <td>用户名</td?
+    </tr>
+    <tr>
+      <td>邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱:</td>
+      <td><%= @franchiser.email %></td>
+    </tr>
+    <tr>
+      <td>角&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;色:</td>
+      <td><%= Franchiser::ROLE[@franchiser.role] %></td>
+    </tr>
+    <tr>
+      <td>职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;务:</td>
+      <td>
+             <%= @franchiser.headship %>
+      </td>
+    </tr>
+    <tr>
+      <td>职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;能:</td>
+      <td><%=  Franchiser::CONTACTTYPE[@franchiser.contact_type]  %></td>
+    </tr>
+    <tr>
+      <td>电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话:</td>
+      <td><%= @franchiser.phone %></td>
+    </tr>
+    <tr>
+          <td>是否离职:</td>
+          <td><%= Franchiser::ISLEAVED[@franchiser.is_leaved] %></td>
+        </tr>
+        <tr>
+          <td>邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;编:</td>
+          <td><%= @franchiser.zip %></td>
+        </tr>
+        <tr>
+          <td>传&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;真:</td>
+          <td><%= @franchiser.fax %></td>
+        </tr>
+        <tr>
+          <td>通讯地址:</td>
+          <td><%= @franchiser.address %></td>
+        </tr>
+        <tr>
+          <td>公&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;司:</td>
+          <td><%= @franchiser.address %></td>
+        </tr>
+
+  </tbody>
+</table>
+<div class="control-group">
+  <div class="controls">
+   <%=  link_to "返回", franchisers_path, :class => "btn" %>
+  </div>
+</div>
+
+<% content_for :navigation do %>
+    <% if current_franchiser.is_super_admin? %>
+        <%= render :partial => "layouts/include/sys_set_left_navi/system_setting_left_navigation_#{get_title[1]}" %>
+
+        <% else %>
+        <%= render :partial => "layouts/include/p_type_left_navi/product_type_left_navigation_#{get_title[1]}" %>
+        <% end %>
+
+<% end %>

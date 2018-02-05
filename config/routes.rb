@@ -4,5 +4,5 @@ Rails.application.routes.draw do
 
 
   # match ':controller(/:action(/:id))(.:format)'
-  resource :franchiser
+  resources :franchisers
 end

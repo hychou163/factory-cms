@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="span4 span_margin"><h4>用户列表</h4></div>
+  <div class="span6">
+    <% if (true) %>
+        <span class="navbar-text pull-right span_margin"><%#=  link_to "新增用户", new_franchiser_path, :class => "btn" %></span>
+    <% end %>
+  </div>
+</div>
+<table class="table table-striped">
+    <tr>
+      <td>姓名</td>
+      <td>登录名</td>
+      <td>邮箱</td>
+      <td>角色</td>
+      <td>是否离职</td>
+      <td>公司</td>
+      <td width="15%">操作</td>
+    </tr>
+  <% if @franchisers.blank? %>
+  <tr><td colspan="7" style="text-align: center">没有数据</td></tr>
+      <% end %>
+  <% @franchisers.each do |franchiser| %>
+    <tr>
+      <td><%= franchiser.contact_name %></td>
+      <td><%= franchiser.phone %></td>
+      <td><%= franchiser.email %></td>
+      <td><%=  franchiser.address %></td>
+        <td><%= franchiser.is_leaved %></td>
+      <td><%=  franchiser.company_id %></td>
+      <td>
+
+      </td>
+    </tr>
+  <% end %>
+</table>
+<div class="control-group">
+  <div class="controls">
+
+  </div>
+</div>
